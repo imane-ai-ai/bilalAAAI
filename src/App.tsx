@@ -648,12 +648,6 @@ function App() {
           </section>
 
 
-          {/* Collections Sections */}
-          <CollectionSection title="ROLEX COLLECTION" watches={rolexWatches} />
-          <CollectionSection title="TISSOT COLLECTION" watches={tissotWatches} />
-          <CollectionSection title="AUDEMARS PIGUET COLLECTION" watches={apWatches} />
-          <CollectionSection title="PATEK PHILIPPE COLLECTION" watches={patekWatches} />
-
           {/* Footer */}
           <footer className="py-12 border-t border-border">
             <div className="container mx-auto px-4">
