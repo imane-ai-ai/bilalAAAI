@@ -647,44 +647,6 @@ function App() {
             </div>
           </section>
 
-          {/* Features Section */}
-          <section id="craftsmanship" className="py-20 tools-section relative">
-            <div className="container mx-auto px-4">
-              <motion.div 
-                className="text-center mb-16"
-                {...fadeInUp}
-              >
-                <h3 className="text-4xl font-display mb-6 gradient-text" data-text="EXCEPTIONAL CRAFTSMANSHIP">
-                  EXCEPTIONAL CRAFTSMANSHIP
-                </h3>
-                <p className="text-text-secondary max-w-2xl mx-auto">
-                  Every MORCO AURA timepiece is a masterpiece of precision engineering and artistic excellence.
-                </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ delay: index * 0.2 }}
-                    className="feature-card"
-                  >
-                    <motion.div
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    >
-                      {feature.icon}
-                    </motion.div>
-                    <h4 className="feature-title">{feature.title}</h4>
-                    <p className="text-text-secondary">{feature.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
 
           {/* Collections Sections */}
           <CollectionSection title="ROLEX COLLECTION" watches={rolexWatches} />
