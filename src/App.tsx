@@ -442,17 +442,20 @@ function App() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="space-y-6"
                   >
-                    <motion.button
+                    <motion.a
+                      href="https://cobragency.gumroad.com/l/SkillToCash"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="group relative bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                      className="group relative bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-block"
                     >
                       <span className="flex items-center gap-3">
                         <Download className="w-6 h-6" />
-                        Get Instant Access
+                        GET THE BOOK
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </span>
-                    </motion.button>
+                    </motion.a>
 
                     <motion.p
                       initial={{ opacity: 0 }}
@@ -526,6 +529,42 @@ function App() {
 
           {/* Fireblood Section */}
           <FirebloodSection />
+
+          {/* CTA Section */}
+          <section className="py-20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-purple/10 via-accent-cyan/5 to-accent-purple/10" />
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="text-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className="max-w-2xl mx-auto"
+                >
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+                    Ready to Transform Your Skills Into Income?
+                  </h2>
+                  <p className="text-gray-300 mb-8 text-lg">
+                    Join thousands who have already started their journey from skill to cash
+                  </p>
+                  <motion.a
+                    href="https://cobragency.gumroad.com/l/SkillToCash"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative inline-block bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-12 py-5 rounded-xl font-bold text-xl transition-all duration-300 shadow-[0_0_30px_rgba(159,111,255,0.3)] hover:shadow-[0_0_50px_rgba(159,111,255,0.5)]"
+                  >
+                    <span className="flex items-center gap-4">
+                      <Download className="w-7 h-7" />
+                      GET THE BOOK
+                      <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent-purple to-accent-cyan opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300" />
+                  </motion.a>
+                </motion.div>
+              </div>
+            </div>
+          </section>
 
           {/* Footer */}
           <footer className="py-12 border-t border-border">

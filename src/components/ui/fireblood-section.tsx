@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Download, ArrowRight } from 'lucide-react';
 import { SparklesCore } from './sparkles';
 
 const benefits = [
@@ -186,6 +186,30 @@ export function FirebloodSection() {
                   <div className="absolute inset-0 bg-accent-purple/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
                 </motion.button>
               </div>
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-center mt-16"
+            >
+              <motion.a
+                href="https://cobragency.gumroad.com/l/SkillToCash"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative inline-block bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_0_30px_rgba(159,111,255,0.3)] hover:shadow-[0_0_50px_rgba(159,111,255,0.5)]"
+              >
+                <span className="flex items-center gap-3 font-mono tracking-wider">
+                  <Download className="w-6 h-6" />
+                  GET THE BOOK
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-purple to-accent-cyan opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300" />
+              </motion.a>
             </motion.div>
           </div>
         </div>
