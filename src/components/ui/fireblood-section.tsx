@@ -50,7 +50,7 @@ export function FirebloodSection() {
               ALL-YOU-NEED
               <br />
               <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-accent-purple via-accent-cyan to-accent-purple bg-clip-text text-transparent">
-                NUTRITION
+                Skill To Cash
               </span>
             </motion.h2>
 
