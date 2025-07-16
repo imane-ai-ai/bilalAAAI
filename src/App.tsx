@@ -527,93 +527,6 @@ function App() {
           {/* Fireblood Section */}
           <FirebloodSection />
 
-          {/* What You'll Get Section */}
-          <section className="py-20 bg-gradient-to-b from-primary to-primary-dark relative overflow-hidden">
-            <div className="absolute inset-0">
-              <SparklesCore
-                id="pricing-sparkles"
-                background="transparent"
-                minSize={0.4}
-                maxSize={1}
-                particleDensity={60}
-                className="w-full h-full"
-                particleColor="#9F6FFF"
-                speed={0.3}
-              />
-            </div>
-            
-            <div className="container mx-auto px-4 relative z-10">
-              <div className="max-w-4xl mx-auto">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12"
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Column - Book Image */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
-                      className="relative"
-                    >
-                      <div className="relative">
-                        <div className="absolute -inset-4 bg-gradient-to-r from-accent-purple/20 to-accent-cyan/20 rounded-xl blur-xl" />
-                        <img
-                          src="https://i.imgur.com/R1RzumI.png"
-                          alt="Skill to Cash eBook"
-                          className="relative z-10 w-full max-w-sm mx-auto rounded-lg shadow-2xl"
-                        />
-                      </div>
-                    </motion.div>
-
-                    {/* Right Column - Pricing Info */}
-                    <motion.div
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                      className="space-y-8"
-                    >
-                      <div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                          What You'll Get
-                        </h2>
-                        <p className="text-gray-300 text-lg leading-relaxed">
-                          A powerful 52-page PDF you can read in 30 minutes - but it will change your life forever.
-                        </p>
-                      </div>
-
-                      <div className="space-y-4">
-                        <div className="flex items-baseline gap-4">
-                          <span className="text-gray-400 text-lg line-through">
-                            Usual Value: $99
-                          </span>
-                        </div>
-                        
-                        <div className="bg-gradient-to-r from-accent-purple/10 to-accent-cyan/10 border border-accent-purple/20 rounded-xl p-6">
-                          <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-white">Today's Price:</span>
-                            <span className="text-4xl font-bold bg-gradient-to-r from-accent-purple to-accent-cyan bg-clip-text text-transparent">
-                              $14.99
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-2 text-emerald-400 font-medium">
-                            <CheckCircle className="w-5 h-5" />
-                            <span>YOU SAVE: 85%</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <motion.button
-                        whileHover={{ scale: 1.02, y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="w-full bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                      >
-                        <span className="flex items-center justify-center gap-3">
-                          <Download className="w-6 h-6" />
-                          Get Instant Access Now
-                        </span>
-                      </motion.button>
           {/* Footer */}
           <footer className="py-12 border-t border-border">
             <div className="container mx-auto px-4">
@@ -666,16 +579,4 @@ function App() {
   );
 }
 
-                      <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
-                        <div className="flex items-center gap-2">
-                          <Shield className="w-4 h-4" />
-                          <span>30-Day Money Back Guarantee</span>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </section>
 export default App;
