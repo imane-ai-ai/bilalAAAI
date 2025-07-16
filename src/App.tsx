@@ -415,13 +415,13 @@ function App() {
                     transition={{ duration: 0.8 }}
                   >
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
-                      <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-slate-100 via-white to-slate-200 bg-clip-text text-transparent">
                         SKILL
                       </span>
                       <br />
-                      <span className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">TO</span>
+                      <span className="bg-gradient-to-r from-accent-purple via-accent-cyan to-accent-blue bg-clip-text text-transparent">TO</span>
                       <br />
-                      <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-slate-100 via-white to-slate-200 bg-clip-text text-transparent">
                         CASH
                       </span>
                     </h1>
