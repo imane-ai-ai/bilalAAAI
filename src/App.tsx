@@ -518,12 +518,12 @@ function App() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="group relative bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-block flex-1 sm:flex-none"
+                      className="group relative bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 inline-block flex-1 sm:flex-none"
                     >
-                      <span className="flex items-center gap-3">
-                        <Download className="w-6 h-6" />
+                      <span className="flex items-center gap-2">
+                        <Download className="w-5 h-5" />
                         GET THE BOOK
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </motion.a>
 
@@ -535,12 +535,12 @@ function App() {
                         isCallActive 
                           ? 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700' 
                           : 'bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700'
-                      } text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-block flex-1 sm:flex-none shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]`}
+                      } text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 inline-block flex-1 sm:flex-none shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]`}
                     >
-                      <span className="flex items-center gap-3">
-                        <Phone className={`w-6 h-6 ${isCallActive ? 'animate-pulse' : ''}`} />
-                        {isCallActive ? 'END CALL' : 'TALK TO AI'}
-                        {!isCallActive && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
+                      <span className="flex items-center gap-2">
+                        <Phone className={`w-5 h-5 ${isCallActive ? 'animate-pulse' : ''}`} />
+                        {isCallActive ? 'END CALL' : 'START A CALL'}
+                        {!isCallActive && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
                       </span>
                     </motion.button>
 
