@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Clock, Watch, Shield, Award, Package, Star, ChevronDown, TrendingUp, Users, DollarSign, Clock3, GraduationCap, CheckCircle, Cpu, Zap, Layers, Database, Code, Terminal, Timer, Settings, Gauge, Download, BookOpen, Target, ArrowRight } from 'lucide-react';
+import { Clock, Watch, Shield, Award, Package, Star, ChevronDown, TrendingUp, Users, DollarSign, Clock3, GraduationCap, CheckCircle, Cpu, Zap, Layers, Database, Code, Terminal, Timer, Settings, Gauge, Download, BookOpen, Target, ArrowRight, Phone } from 'lucide-react';
 import WatchDetails from './pages/WatchDetails';
 import { Squares } from './components/ui/squares-background';
 import { SparklesCore } from './components/ui/sparkles';
