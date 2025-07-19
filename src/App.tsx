@@ -1,4 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Clock, Watch, Shield, Award, Package, Star, ChevronDown, TrendingUp, Users, DollarSign, Clock3, GraduationCap, CheckCircle, Cpu, Zap, Layers, Database, Code, Terminal, Timer, Settings, Gauge, Download, BookOpen, Target, ArrowRight } from 'lucide-react';
 import WatchDetails from './pages/WatchDetails';
@@ -399,10 +400,42 @@ function App() {
   const arrowOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0, 1, 0]);
   const arrowScale = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0.8, 1, 0.8]);
 
+  // Initialize chat widget
+  React.useEffect(() => {
+    // Set up VG_CONFIG
+    (window as any).VG_CONFIG = {
+      ID: "iwRGPGiTSUaljv2qXaoL",
+      region: 'na',
+      render: 'bottom-right',
+      stylesheets: [
+        "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+      ],
+    };
+
+    // Load the script
+    const VG_SCRIPT = document.createElement("script");
+    VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+    VG_SCRIPT.defer = true;
+    document.body.appendChild(VG_SCRIPT);
+
+    // Cleanup function
+    return () => {
+      const existingScript = document.querySelector('script[src="https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   return (
     <Routes>
       <Route path="/" element={
         <div className="min-h-screen bg-black text-white">
+          {/* Chat Widget Container */}
+          <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER">
+            {/* Here is where CONVOCORE renders the widget. */}
+          </div>
+
           {/* Hero Section - Skill to Cash */}
           <section className="min-h-screen bg-black flex items-center justify-center">
             <div className="container mx-auto px-4">
