@@ -531,16 +531,111 @@ function App() {
                       onClick={isCallActive ? endCall : startCall}
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
+                     animate={isCallActive ? { 
+                       boxShadow: [
+                         "0 0 20px rgba(239, 68, 68, 0.3)",
+                         "0 0 40px rgba(239, 68, 68, 0.6)",
+                         "0 0 20px rgba(239, 68, 68, 0.3)"
+                       ]
+                     } : {
+                       boxShadow: [
+                         "0 0 20px rgba(16, 185, 129, 0.3)",
+                         "0 0 30px rgba(16, 185, 129, 0.5)",
+                         "0 0 20px rgba(16, 185, 129, 0.3)"
+                       ]
+                     }}
+                     transition={isCallActive ? {
+                       boxShadow: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                     } : {
+                       boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                     }}
                       className={`group relative ${
                         isCallActive 
-                          ? 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700' 
-                          : 'bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700'
-                      } text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 inline-block flex-1 sm:flex-none shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]`}
+                         ? 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 shadow-[0_0_20px_rgba(239,68,68,0.4)]' 
+                         : 'bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 shadow-[0_0_20px_rgba(16,185,129,0.3)]'
+                     } text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 inline-block flex-1 sm:flex-none hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] relative overflow-hidden`}
                     >
+                     {/* Animated background pulse for active call */}
+                     {isCallActive && (
+                       <motion.div
+                         className="absolute inset-0 bg-gradient-to-r from-red-400/20 to-red-500/20"
+                         animate={{
+                           opacity: [0.3, 0.7, 0.3],
+                         }}
+                         transition={{
+                           duration: 1,
+                           repeat: Infinity,
+                           ease: "easeInOut"
+                         }}
+                       />
+                     )}
+                     
+                     {/* Ripple effect for non-active state */}
+                     {!isCallActive && (
+                       <motion.div
+                         className="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-emerald-500/10"
+                         animate={{
+                           scale: [1, 1.05, 1],
+                           opacity: [0.5, 0.8, 0.5],
+                         }}
+                         transition={{
+                           duration: 2,
+                           repeat: Infinity,
+                           ease: "easeInOut"
+                         }}
+                       />
+                     )}
+
                       <span className="flex items-center gap-2">
-                        <Phone className={`w-5 h-5 ${isCallActive ? 'animate-pulse' : ''}`} />
+                       <motion.div
+                         animate={isCallActive ? {
+                           rotate: [0, 5, -5, 0],
+                           scale: [1, 1.1, 1]
+                         } : {
+                           rotate: [0, 2, -2, 0]
+                         }}
+                         transition={isCallActive ? {
+                           duration: 0.5,
+                           repeat: Infinity,
+                           ease: "easeInOut"
+                         } : {
+                           duration: 3,
+                           repeat: Infinity,
+                           ease: "easeInOut"
+                         }}
+                       >
+                         <Phone className="w-5 h-5 relative z-10" />
+                       </motion.div>
+                       
+                       <motion.span 
+                         className="relative z-10"
+                         animate={isCallActive ? {
+                           scale: [1, 1.02, 1]
+                         } : {}}
+                         transition={isCallActive ? {
+                           duration: 1,
+                           repeat: Infinity,
+                           ease: "easeInOut"
+                         } : {}}
+                       >
                         {isCallActive ? 'END CALL' : 'START A CALL'}
-                        {!isCallActive && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                       </motion.span>
+                       
+                       {!isCallActive && (
+                         <motion.div
+                           animate={{
+                             x: [0, 3, 0],
+                           }}
+                           transition={{
+                             duration: 2,
+                             repeat: Infinity,
+                             ease: "easeInOut"
+                           }}
+                           className="relative z-10"
+                         >
+                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                         </motion.div>
+                       )}
                       </span>
                     </motion.button>
 
