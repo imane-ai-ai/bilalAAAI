@@ -400,6 +400,42 @@ function App() {
   const arrowOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0, 1, 0]);
   const arrowScale = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0.8, 1, 0.8]);
 
+  // Vapi AI phone caller setup
+  const [vapi, setVapi] = React.useState(null);
+  const [isCallActive, setIsCallActive] = React.useState(false);
+  
+  React.useEffect(() => {
+    const apiKey = "f059b533-8076-4800-99ac-3d8deb3fce3c";
+    const vapiInstance = new Vapi(apiKey);
+    setVapi(vapiInstance);
+
+    // Listen for call status changes
+    vapiInstance.on('call-start', () => {
+      setIsCallActive(true);
+    });
+
+    vapiInstance.on('call-end', () => {
+      setIsCallActive(false);
+    });
+
+    return () => {
+      vapiInstance.stop();
+    };
+  }, []);
+
+  const startCall = () => {
+    if (vapi && !isCallActive) {
+      const assistantId = "e311bb26-57ad-4693-ab8b-b6dd76ec6d0e";
+      vapi.start(assistantId);
+    }
+  };
+
+  const endCall = () => {
+    if (vapi && isCallActive) {
+      vapi.stop();
+    }
+  };
+
   // Initialize chat widget
   React.useEffect(() => {
     // Set up VG_CONFIG
@@ -473,7 +509,7 @@ function App() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="space-y-6"
+                    className="space-y-6 flex flex-col sm:flex-row gap-4"
                   >
                     <motion.a
                       href="https://cobragency.gumroad.com/l/SkillToCash"
@@ -481,7 +517,7 @@ function App() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="group relative bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-block"
+                      className="group relative bg-gradient-to-r from-accent-purple to-accent-cyan hover:from-accent-purple/90 hover:to-accent-cyan/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-block flex-1 sm:flex-none"
                     >
                       <span className="flex items-center gap-3">
                         <Download className="w-6 h-6" />
@@ -490,11 +526,28 @@ function App() {
                       </span>
                     </motion.a>
 
+                    <motion.button
+                      onClick={isCallActive ? endCall : startCall}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`group relative ${
+                        isCallActive 
+                          ? 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700' 
+                          : 'bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700'
+                      } text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-block flex-1 sm:flex-none shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]`}
+                    >
+                      <span className="flex items-center gap-3">
+                        <Phone className={`w-6 h-6 ${isCallActive ? 'animate-pulse' : ''}`} />
+                        {isCallActive ? 'END CALL' : 'TALK TO AI'}
+                        {!isCallActive && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
+                      </span>
+                    </motion.button>
+
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.8, delay: 0.6 }}
-                      className="text-gray-400 text-sm"
+                      className="text-gray-400 text-sm mt-4 sm:mt-0"
                     >
                       Even if you've never sold anything before
                     </motion.p>
