@@ -196,7 +196,7 @@ export function FirebloodSection() {
               className="text-center mt-16"
             >
               <motion.a
-                href="https://cobragency.gumroad.com/l/SkillToCash"
+                href="https://cobralaunchai.gumroad.com/l/SkillToCash"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -3 }}

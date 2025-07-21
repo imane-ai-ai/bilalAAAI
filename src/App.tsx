@@ -522,7 +522,7 @@ function App() {
                     className="space-y-6 flex flex-col sm:flex-row gap-4"
                   >
                     <motion.a
-                      href="https://cobragency.gumroad.com/l/SkillToCash"
+                      href="https://cobralaunchai.gumroad.com/l/SkillToCash"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, y: -2 }}
@@ -738,7 +738,7 @@ function App() {
                     Join thousands who have already started their journey from skill to cash
                   </p>
                   <motion.a
-                    href="https://cobragency.gumroad.com/l/SkillToCash"
+                    href="https://cobralaunchai.gumroad.com/l/SkillToCash"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, y: -3 }}
