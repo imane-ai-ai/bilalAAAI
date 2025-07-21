@@ -200,6 +200,4 @@ const CountdownBanner = () => {
           </div>
           
           <div className="flex items-center gap-1 sm:gap-2">
-            <Timer className="w-4 h-4 text-yellow-300" />
-  )
-}
+            <Timer className="w-4 h-
