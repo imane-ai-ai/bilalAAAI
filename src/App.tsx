@@ -220,4 +220,3 @@ const CountdownBanner = () => {
     </div>
   )
 }
-export default App;
