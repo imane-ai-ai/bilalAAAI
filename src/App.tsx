@@ -389,3 +389,7 @@ const tissotWatches = [
   {
     name: "Seastar 2000",
     description: "Professional diver's watch with ceramic bezel",
+    price: "$2,500",
+    image: "https://i.imgur.com/example.png"
+  }
+];
