@@ -10,6 +10,7 @@ import { SparklesPreview } from './components/ui/sparkles-preview';
 import { HeroGeometric } from './components/ui/hero-geometric';
 import { LogoCarousel } from './components/ui/logo-carousel';
 import { FirebloodSection } from './components/ui/fireblood-section';
+import PriceBanner from './components/ui/countdown-banner';
 
 const allLogos = [
   { 
@@ -468,6 +469,14 @@ function App() {
     <Routes>
       <Route path="/" element={
         <div className="min-h-screen bg-black text-white">
+          {/* Countdown Banner */}
+          <PriceBanner 
+            message="The price will increase in 48 hours!"
+            countdownHours={48}
+            backgroundColor="#DC2626"
+            textColor="white"
+          />
+
           {/* Chat Widget Container */}
           <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER">
             {/* Here is where CONVOCORE renders the widget. */}
