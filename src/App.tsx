@@ -201,5 +201,22 @@ const CountdownBanner = () => {
           
           <div className="flex items-center gap-1 sm:gap-2">
             <Timer className="w-4 h-4 text-yellow-300" />
+            <div className="flex items-center gap-1 text-sm sm:text-base font-mono">
+              <div className="bg-white/20 px-2 py-1 rounded">
+                {String(timeLeft.hours).padStart(2, '0')}
+              </div>
+              <span>:</span>
+              <div className="bg-white/20 px-2 py-1 rounded">
+                {String(timeLeft.minutes).padStart(2, '0')}
+              </div>
+              <span>:</span>
+              <div className="bg-white/20 px-2 py-1 rounded">
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
