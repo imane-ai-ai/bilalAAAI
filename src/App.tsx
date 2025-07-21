@@ -393,5 +393,3 @@ const tissotWatches = [
     image: "https://i.imgur.com/example.png"
   }
 ];
-
-export default App;
