@@ -388,4 +388,4 @@ const tissotWatches = [
   },
   {
     name: "Seastar 2000",
-    description: "Professional
+    description: "Professional diver's watch with ceramic bezel",
