@@ -8,7 +8,7 @@ import { SparklesCore } from './components/ui/sparkles';
 import { SparklesPreview } from './components/ui/sparkles-preview';
 import { HeroGeometric } from './components/ui/hero-geometric';
 import { LogoCarousel } from './components/ui/logo-carousel';
-import { FirebloodSection } from './components/ui/fireblood-section';
+import FirebloodSection from './components/ui/fireblood-section';
 import PriceBanner from './components/ui/countdown-banner';
 
 // Lazy load components for better performance
