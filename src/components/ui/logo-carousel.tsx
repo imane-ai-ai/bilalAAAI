@@ -106,7 +106,7 @@ interface LogoCarouselProps {
   columnCount?: number;
   logos: Logo[];
 }
-
+export const LogoCarousel = memo(function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   const [logoSets, setLogoSets] = useState<Logo[][]>([])
   const [currentTime, setCurrentTime] = useState(0)
 
@@ -136,5 +136,4 @@ interface LogoCarouselProps {
       ))}
     </div>
   )
-});
-}
+})
