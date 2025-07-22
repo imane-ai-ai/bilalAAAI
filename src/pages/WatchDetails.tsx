@@ -211,7 +211,8 @@ const watchCatalog: Record<string, WatchEntry> = {
     ]
   }
 };
-const WatchDetails = memo(() => {
+
+const WatchDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const watch = watchCatalog[id || ''];
@@ -484,8 +485,6 @@ const WatchDetails = memo(() => {
       </div>
     </div>
   );
-});
-
-WatchDetails.displayName = 'WatchDetails';
+};
 
 export default WatchDetails;
