@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo, useCallback } from 'react'
 import { AlertTriangle, Clock } from 'lucide-react'
 
 interface CountdownTimerProps {
@@ -13,7 +13,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetHours = 48 }) => 
   })
 
   useEffect(() => {
-    const updateTimer = () => {
+    const timer = setInterval(() => {
       setTimeLeft(prev => {
         let { hours, minutes, seconds } = prev
 
@@ -30,15 +30,14 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetHours = 48 }) => 
 
         return { hours, minutes, seconds }
       })
-    }
-
-    const timer = setInterval(updateTimer, 1000)
+    }, 1000)
 
     return () => clearInterval(timer)
   }, [])
 
-  const formatTime = useCallback((time: number): string => {
-  }, [])
+  const formatTime = (time: number): string => {
+    return time.toString().padStart(2, '0')
+  }
 
   return (
     <div className="flex items-center gap-2 text-white">
@@ -48,7 +47,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetHours = 48 }) => 
       </span>
     </div>
   )
-})
+}
 
 interface PriceBannerProps {
   message?: string
@@ -56,7 +55,8 @@ interface PriceBannerProps {
   backgroundColor?: string
   textColor?: string
 }
-const PriceBanner: React.FC<PriceBannerProps> = memo(({
+
+const PriceBanner: React.FC<PriceBannerProps> = ({
   message = "The price will increase in 48 hours!",
   countdownHours = 48,
   backgroundColor = "#1E3A8A",
@@ -80,6 +80,6 @@ const PriceBanner: React.FC<PriceBannerProps> = memo(({
       </div>
     </div>
   )
-})
+}
 
 export default PriceBanner
