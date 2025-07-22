@@ -15,10 +15,10 @@
 
 body {
   font-family: 'Space Grotesk', 'Inter', 'Cairo', 'Noto Kufi Arabic', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: #0A0D16;
   color: #FFFFFF;
+  /* Optimize font loading */
+  font-display: swap;
   background-image: 
     radial-gradient(circle at 25% 25%, rgba(159, 111, 255, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(78, 255, 237, 0.1) 0%, transparent 50%),

@@ -3,7 +3,13 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+// Performance optimization: Use concurrent features
+const root = createRoot(document.getElementById('root')!, {
+  // Enable concurrent features for better performance
+  identifierPrefix: 'skill-to-cash-'
+});
+
+root.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>

@@ -1,9 +1,8 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Vapi from '@vapi-ai/web';
 import { Clock, Watch, Shield, Award, Package, Star, ChevronDown, TrendingUp, Users, DollarSign, Clock3, GraduationCap, CheckCircle, Cpu, Zap, Layers, Database, Code, Terminal, Timer, Settings, Gauge, Download, BookOpen, Target, ArrowRight, Phone } from 'lucide-react';
-import WatchDetails from './pages/WatchDetails';
 import { Squares } from './components/ui/squares-background';
 import { SparklesCore } from './components/ui/sparkles';
 import { SparklesPreview } from './components/ui/sparkles-preview';
@@ -11,6 +10,16 @@ import { HeroGeometric } from './components/ui/hero-geometric';
 import { LogoCarousel } from './components/ui/logo-carousel';
 import { FirebloodSection } from './components/ui/fireblood-section';
 import PriceBanner from './components/ui/countdown-banner';
+
+// Lazy load components for better performance
+const WatchDetails = lazy(() => import('./pages/WatchDetails'));
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="min-h-screen bg-primary flex items-center justify-center">
+    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-accent-purple"></div>
+  </div>
+);
 
 const allLogos = [
   { 
@@ -804,7 +813,11 @@ function App() {
           </footer>
         </div>
       } />
-      <Route path="/watch/:id" element={<WatchDetails />} />
+      <Route path="/watch/:id" element={
+        <Suspense fallback={<LoadingSpinner />}>
+          <WatchDetails />
+        </Suspense>
+      } />
     </Routes>
   );
 }

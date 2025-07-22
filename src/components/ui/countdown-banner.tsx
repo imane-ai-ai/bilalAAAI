@@ -13,7 +13,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetHours = 48 }) => 
   })
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const updateTimer = () => {
       setTimeLeft(prev => {
         let { hours, minutes, seconds } = prev
 
@@ -30,14 +30,15 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetHours = 48 }) => 
 
         return { hours, minutes, seconds }
       })
-    }, 1000)
+    }
+
+    const timer = setInterval(updateTimer, 1000)
 
     return () => clearInterval(timer)
   }, [])
 
-  const formatTime = (time: number): string => {
-    return time.toString().padStart(2, '0')
-  }
+  const formatTime = useCallback((time: number): string => {
+  }, [])
 
   return (
     <div className="flex items-center gap-2 text-white">
@@ -47,7 +48,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetHours = 48 }) => 
       </span>
     </div>
   )
-}
+})
 
 interface PriceBannerProps {
   message?: string
@@ -55,8 +56,7 @@ interface PriceBannerProps {
   backgroundColor?: string
   textColor?: string
 }
-
-const PriceBanner: React.FC<PriceBannerProps> = ({
+const PriceBanner: React.FC<PriceBannerProps> = memo(({
   message = "The price will increase in 48 hours!",
   countdownHours = 48,
   backgroundColor = "#1E3A8A",
@@ -80,6 +80,6 @@ const PriceBanner: React.FC<PriceBannerProps> = ({
       </div>
     </div>
   )
-}
+})
 
 export default PriceBanner

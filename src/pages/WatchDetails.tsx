@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import React, { memo } from 'react';
 import { ArrowLeft, Star, Shield, Clock, Droplets, Heart, Share2, Package, Award, PenTool as Tool, Sparkles, AlignCenterVertical as Certificate, History, Check, Info } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { SparklesCore } from '../components/ui/sparkles';
@@ -211,7 +212,6 @@ const watchCatalog: Record<string, WatchEntry> = {
   }
 };
 
-const WatchDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const watch = watchCatalog[id || ''];

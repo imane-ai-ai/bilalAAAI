@@ -1,4 +1,4 @@
-import React, {
+import React, { memo, 
   useCallback,
   useEffect,
   useMemo,
@@ -107,7 +107,6 @@ interface LogoCarouselProps {
   logos: Logo[];
 }
 
-export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   const [logoSets, setLogoSets] = useState<Logo[][]>([])
   const [currentTime, setCurrentTime] = useState(0)
 
@@ -137,4 +136,5 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
       ))}
     </div>
   )
+});
 }

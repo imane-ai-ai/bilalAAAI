@@ -219,4 +219,5 @@ export function FirebloodSection() {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-purple to-transparent animate-pulse" />
     </section>
   );
+});
 }
