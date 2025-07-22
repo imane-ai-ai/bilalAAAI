@@ -13,7 +13,7 @@ const benefits = [
   "How to Use Your Words to Sell"
 ];
 
-export const FirebloodSection = memo(function FirebloodSection() {
+export default function SkillToCashSection() {
   return (
     <section className="min-h-screen bg-primary relative overflow-hidden py-20">
       {/* Animated Background Grid */}
@@ -220,4 +220,3 @@ export const FirebloodSection = memo(function FirebloodSection() {
     </section>
   );
 }
-)
