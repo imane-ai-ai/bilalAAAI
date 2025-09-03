@@ -151,7 +151,7 @@ const SkillToCashSection = memo(() => {
                   </div>
 
                   <img 
-                    src="https://i.imgur.com/10raL0c.png" 
+                    src="https://i.imgur.com/0DTOqYe.png" 
                     alt="Skill to Cash eBook"
                     className="w-[400px] relative z-10 mix-blend-normal transition-all duration-300 hover:scale-105 transform-gpu"
                   />
