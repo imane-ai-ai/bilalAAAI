@@ -38,57 +38,6 @@ const SkillToCashSection = memo(() => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
           <div>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-mono tracking-wider font-bold mb-6"
-              style={{ 
-                fontFamily: "'Press Start 2P', monospace",
-                textShadow: '0 0 20px rgba(159, 111, 255, 0.5)'
-              }}
-            >
-              ALL-YOU-NEED
-              <br />
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-accent-purple via-accent-cyan to-accent-purple bg-clip-text text-transparent">
-                Skill To Cash
-              </span>
-            </motion.h2>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mb-8 font-mono space-y-4"
-            >
-              <p className="text-accent-purple">
-                SKILL TO CASH <span className="text-white">REPLACES</span> CONFUSION AND
-              </p>
-              <p className="text-white">
-                HESITATION BY FILLING THE GAP BETWEEN YOUR
-              </p>
-              <p className="text-accent-cyan">
-                SKILL AND YOUR INCOME. <span className="text-white">JUST ONE</span>
-              </p>
-              <p className="text-white">
-                SIMPLE FRAMEWORK GIVES YOU THE ESSENTIAL
-              </p>
-              <p className="text-accent-purple">
-                TOOLS TO: CREATE IRRESISTIBLE OFFERS,
-              </p>
-              <p className="text-white">
-                FIND CLIENTS, AND CLOSE DEALS.
-              </p>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-gray-300 mb-12 font-mono tracking-wide"
-            >
-              IN SHORT, IT'S A <span className="text-accent-cyan">SMART INVESTMENT</span> IN YOUR FUTURE —
-              <br />TO MONETIZE YOUR TALENT NOW AND BUILD LONG-TERM FREEDOM.
-            </motion.p>
           </div>
 
           {/* Right Column */}
